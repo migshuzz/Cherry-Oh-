@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cx1npeax0blue"]
+
+[ext_resource type="Script" uid="uid://dv6px3jefprmo" path="res://Rudi/rudi.gd" id="1_y7iox"]
+[ext_resource type="Texture2D" uid="uid://b01goulyy1rth" path="res://Rudi/Rudi.png" id="2_y7iox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7iox"]
+radius = 7.0
+
+[node name="Rudi" type="CharacterBody2D" unique_id=722511394]
+script = ExtResource("1_y7iox")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=476182052]
+texture = ExtResource("2_y7iox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554551104]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_y7iox")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1840133913]
