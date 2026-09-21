@@ -6,14 +6,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7iox"]
 radius = 7.0
 
-[node name="Rudi" type="CharacterBody2D" unique_id=722511394]
+[node name="Rudi" type="CharacterBody2D" unique_id=722511394 groups=["rudi"]]
 script = ExtResource("1_y7iox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=476182052]
+position = Vector2(-4.7683716e-07, -1.0000005)
 texture = ExtResource("2_y7iox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554551104]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_y7iox")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1840133913]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1840133913 groups=["rudi"]]
+position = Vector2(0, -1)

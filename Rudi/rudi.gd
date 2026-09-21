@@ -1,12 +1,23 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -450.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -550.0
 const GRAVITY = 45
+
+var position_initial : Vector2
+
+func _ready() -> void: 
+	
+	position_initial = global_position
+	
+func restart_position() -> void:
+	
+	velocity = Vector2.ZERO
 
 
 func _physics_process(_delta: float) -> void:
+
 	velocity.y += GRAVITY 
 	
 	if velocity.y > 0 and not is_on_floor():
@@ -25,7 +36,6 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = -SPEED
 	else:
 		velocity.x=0
-		
 
 	move_and_slide()
 

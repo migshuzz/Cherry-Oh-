@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d17qyo7tpht53"]
+
+[ext_resource type="Script" uid="uid://cqda1cjejr5mg" path="res://Escenas/caída.gd" id="1_qk1yx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6ehs"]
+size = Vector2(1825, 114)
+
+[node name="caída" type="Area2D" unique_id=280511450]
+script = ExtResource("1_qk1yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351891366]
+position = Vector2(902.5, 47)
+shape = SubResource("RectangleShape2D_d6ehs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
