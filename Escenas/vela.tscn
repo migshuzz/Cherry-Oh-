@@ -1,32 +1,34 @@
 [gd_scene format=3 uid="uid://dn372i30gwov6"]
 
 [ext_resource type="Texture2D" uid="uid://b2eteeifxy4sw" path="res://nose/blue_candle.png" id="1_axoyo"]
-[ext_resource type="Script" uid="uid://28pivnnhvv6i" path="res://Escenas/static_body_2d.gd" id="1_bjldq"]
+[ext_resource type="Script" uid="uid://28pivnnhvv6i" path="res://Escenas/vela.gd" id="1_bjldq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjldq"]
-size = Vector2(11, 22.5)
+size = Vector2(11, 22.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wrfc"]
-size = Vector2(12, 6.5)
+size = Vector2(5, 5)
 
-[node name="Node2D" type="Node2D" unique_id=1254564602]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=153595170]
+[node name="vela" type="StaticBody2D" unique_id=153595170]
+collision_mask = 0
 script = ExtResource("1_bjldq")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1289097980]
-position = Vector2(-9.5, 5.5)
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1289097980]
+position = Vector2(-13.500002, -24.5)
 scale = Vector2(0.6041667, 0.7708333)
 texture = ExtResource("1_axoyo")
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=718423062]
-position = Vector2(-10, 8.25)
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=718423062]
+position = Vector2(0.5, -3.125)
 shape = SubResource("RectangleShape2D_bjldq")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=913762087]
+[node name="llama" type="Area2D" parent="." unique_id=913762087]
+position = Vector2(0, -17)
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=429810853]
-position = Vector2(-10, -7.75)
+[node name="Collision" type="CollisionShape2D" parent="llama" unique_id=429810853]
 shape = SubResource("RectangleShape2D_0wrfc")
 
-[connection signal="body_entered" from="Area2D" to="StaticBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="llama" to="." method="_on_llama_body_entered"]

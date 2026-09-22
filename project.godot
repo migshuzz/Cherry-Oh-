@@ -20,15 +20,17 @@ config/icon="uid://b01goulyy1rth"
 window/size/viewport_width=320
 window/size/viewport_height=180
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
-[global_group]
+[layer_names]
 
-rudi=""
+2d_physics/layer_1="mundo"
+2d_physics/layer_2="rudi"
+2d_physics/layer_3="llama"
+2d_physics/layer_4="queque"
 
 [physics]
 

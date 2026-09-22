@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://6otdcrnt4pj8"]
+
+[ext_resource type="Texture2D" uid="uid://cwpfu5h874q2g" path="res://nose/carrot_Cake.png" id="1_gapmx"]
+[ext_resource type="Script" uid="uid://clcr8376mt8rk" path="res://cake/cake.gd" id="1_gec7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_66ay2"]
+
+[node name="Cake" type="Area2D" unique_id=1947619084]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_gec7h")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=643459216]
+texture = ExtResource("1_gapmx")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1830557897]
+shape = SubResource("CircleShape2D_66ay2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
